@@ -1,5 +1,8 @@
 <template>
   <div>
+    <nuxt-link to="/">首页</nuxt-link>
+    <!-- 关闭预加载 -->
+    <nuxt-link to="/admin" no-prefetch>管理</nuxt-link>
     <Nuxt />
   </div>
 </template>
