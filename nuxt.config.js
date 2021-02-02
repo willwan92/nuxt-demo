@@ -25,6 +25,19 @@ export default {
     '@/plugins/element-ui'
   ],
 
+  // customize the Nuxt.js router
+  router: {
+    // 扩展路由
+    extendRoutes(routes, resolve) {
+      // 自定义路由，自动生成的路由还能使用
+      routes.push({
+        name: 'custom',
+        path: '/cus',
+        component: resolve(__dirname, 'pages/custom.vue')
+      })
+    }
+  },
+
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
