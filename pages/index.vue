@@ -26,18 +26,21 @@ export default {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' }
     ]
   },
+  async asyncData ({ $axios, error }) {
+    // called every time before loading the component
+    // 在每次加载组件之前调用
+    // 不能使用this获取组件实例，但是可以通过上下文获取相关数据
+    const { ok, goods } = await $axios.$get('/api/goods')
+    if (ok) {
+      return { goods }
+    }
+    error({ statusCode: 400, message: '查询商品数据失败' })
+  },
+  fetch () {
+    // The fetch method is used to fill the store before rendering the page
+  },
   data() {
     return {
-      goods: [
-        {
-          id: 1,
-          name: '椰子'
-        },
-        {
-          id: 2,
-          name: '猕猴桃'
-        }
-      ]
     }
   }
 }

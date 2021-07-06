@@ -8,8 +8,8 @@ app.keys = ['some secret', 'another secret']
 const router = koaRouter({ prefix: '/api'})
 
 const goods = [
-  { id: 1, text: 'web全栈架构师', price: 100 },
-  { id: 2, text: 'python全栈架构师', price: 150 }
+  { id: 1, name: 'web全栈架构师', price: 100 },
+  { id: 2, name: 'python全栈架构师', price: 150 }
 ]
 
 router.get('/goods', ctx => {
