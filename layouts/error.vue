@@ -9,7 +9,7 @@
 <script>
 export default {
   props: ['error'],
-  layout: 'blog'
+  layout: 'blank'
 }
 </script>
 

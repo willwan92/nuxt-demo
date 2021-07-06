@@ -31,7 +31,7 @@ export default {
     extendRoutes(routes, resolve) {
       // 自定义路由，自动生成的路由还能使用
       routes.push({
-        name: 'custom',
+        name: 'cus',
         path: '/cus',
         component: resolve(__dirname, 'pages/custom.vue')
       })
