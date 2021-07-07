@@ -21,6 +21,7 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+  // Nuxt.js 允许您在运行 Vue.js 应用程序之前执行 js 插件。这在您需要使用自己的库或第三方模块时特别有用。
   plugins: [
     '@/plugins/element-ui'
   ],
@@ -46,8 +47,10 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
+  // 模块是 Nuxt.js 扩展，可以扩展其核心功能
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    'cookie-universal-nuxt'
   ],
   axios: {
     proxy: true
