@@ -3,7 +3,7 @@ export const state = () => ({
 });
 
 export const mutations = {
-  init(state, token) {
+  SET_TOKEN(state, token) {
     state.token = token;
   }
 };
@@ -16,7 +16,7 @@ export const getters = {
 
 export const actions = {
   login({ commit, getters }, u) {
-    return this.$login(u).then(({ token }) => {
+    return this.$axios.$post('/api/login', u).then(({ token }) => {
       if (token) {
         commit("SET_TOKEN", token);
       }

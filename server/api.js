@@ -27,14 +27,14 @@ router.get('/detail', ctx => {
 })
 
 router.post('/login', ctx => {
-  const user = cts.request.body
+  const user = ctx.request.body
   if (user.username === 'admin' && user.password === '1234') {
     const token = 'a mock token'
     // 将token存入cookie
     ctx.cookies.set('token', token)
     ctx.body = {
       ok: 1,
-      data: token
+      token
     }
   }
 })
